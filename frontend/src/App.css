@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+nav
+{
+    height: 7%;
+    width: 100%;
+    background-color:white;
+    border-top: solid 3px rgb(255, 128, 0);
+    box-shadow: 0px 0.5px rgb(155, 154, 154);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar
+{
+    height: 100%;
+    min-width:85%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navitems
+{
+    text-decoration: none;
+    font-size: small;
+    font-weight: 500;
+    color: rgb(89, 87, 87);
+    transition: 0.2s;
+    cursor:pointer;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbtn
+{
+    border-radius: 20px;
+    padding: 0.6% 2%;
 }
-
-.App-link {
-  color: #61dafb;
+.navitems:hover
+{
+    background-color:rgb(220, 220, 220);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar form
+{
+    flex-grow: 1;
+    padding: 0px 12px;
+    position: relative;
+}
+.navbar form input
+{
+    min-width:90%;
+    margin: 0;
+    padding: 8px 10px 8px 32px;
+    font-size: 13px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+.navbar form .navsearch
+{
+    position: absolute;
+    left: 25px;
+    top: 8px;
+}
+.navlog
+{
+    border: solid 1px blue;
+    background-color:aliceblue;
+    border-radius: 3px;
+}
+.navlog:hover
+{
+    background-color:rgb(176, 209, 239);
+}
+.navsign
+{
+    border: solid 1px blue;
+    background-color: rgb(109, 109, 236);
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 0.6% 1%;
+    color: white;
 }
