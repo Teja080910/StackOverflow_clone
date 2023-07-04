@@ -1,7 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Widget,WidgetTags } from "../widgets/widgets";
-import earth from "../../assets/earth.svg"
+import { Link, NavLink, useLocation } from "react-router-dom";
+import earth from "../../assets/earth.svg";
+import { Questions, QuestionsList } from "../questions/questions";
+import { Widget, WidgetTags } from "../widgets/widgets";
 export const Leftbar=()=>
 {
     return(
@@ -32,8 +33,36 @@ export const Leftbar=()=>
 
 export const Mainbar=()=>
 {
+    var questionslist=[{
+        id:1,
+        votes:2,
+        noOfAnswers:2,
+        QuestionTitle:'what is your name',
+        QuestionBody:'your name',
+        QuestionTags:["Html","css"],
+        userPosted:'teja',
+        askedOn:'oct 9'
+    }]
+    const location=useLocation();
     return(
         <>
+        <div className="mainbar">
+            <div className="mainbarheader">
+                {
+                    location.pathname==='/'?<h1>Top Questions</h1>:<h1>All Questions</h1>
+                }
+                <Link to='/askquestions' className="askquestion">Ask Questions</Link>
+            </div>
+            <div>
+                {
+                    questionslist===null?<h1>Loading...</h1>:
+                    <>
+                    <p>{questionslist.length} questions</p>
+                    <QuestionsList questionslist={questionslist}/>
+                    </>
+                }
+            </div>
+        </div>
         </>
     )
 }
